@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _canDoubleJump;
     private bool _isGrounded;
     private float _moveInput;
-
+    public bool onEffect = false;
     private Rigidbody2D _rb;
 
     private void Start()
