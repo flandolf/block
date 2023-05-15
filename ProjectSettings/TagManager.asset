@@ -12,7 +12,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Spikes
   - 
   - 
   - 
@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Spikes
+    uniqueID: 2729510287
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
