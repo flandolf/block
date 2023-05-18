@@ -51,11 +51,23 @@ public class PlayerMovement : MonoBehaviour
             _rb.velocity = new Vector2(0, -stompForce);
 
         if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (Input.GetKeyDown(KeyCode.O)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        if (Input.GetKeyDown(KeyCode.P)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Spike")) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        if (other.CompareTag("Finish")) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (other.CompareTag("Finish"))
+        {
+            if (SceneManager.GetActiveScene().name == "Help")
+            {
+                SceneManager.LoadScene("Main Menu");
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
     }
 }

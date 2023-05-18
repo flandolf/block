@@ -14,4 +14,9 @@ public class ButtonScript : MonoBehaviour
     {
         Application.Quit();
     }
+    
+    public void help()
+    {
+        SceneManager.LoadScene("Help");
+    }
 }
