@@ -68,6 +68,21 @@ public class PlayerMovement : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
+
+            if (SceneManager.GetActiveScene().name == "Main Menu")
+            {
+                if (other.gameObject.name == "HelpCircle")
+                {
+                    SceneManager.LoadScene("Help");
+                } else if (other.gameObject.name == "PlayCircle")
+                {
+                    SceneManager.LoadScene("Level 0");
+                }
+                else
+                {
+                    Application.Quit();
+                }
+            }
         }
     }
 }
